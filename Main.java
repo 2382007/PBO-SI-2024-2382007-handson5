@@ -5,14 +5,15 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("BEFORE EDIT");
+        System.out.println("BEFORE DELETEE");
         addTodoList("Mewarnai");
         addTodoList("Membaca");
         addTodoList("Bersepeda");
         addTodoList("Berkhotbah");
         showTodoList();
-        editTodoList(1,  );
-        System.out.println("AFTER EDIT");
+        editTodoList(3, "Bekerja");
+        removeTodoList(3);
+        System.out.println("AFTER DELETE");
         showTodoList();
     }
 
@@ -93,5 +94,6 @@ public class Main {
         todos[number - 1] = newTodo;
         return true;
     }
+
 }
 
