@@ -5,16 +5,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("BEFORE DELETE");
-        addTodoList("Mewarnai");
-        addTodoList("Membaca");
-        addTodoList("Bersepeda");
-        addTodoList("Berkhotbah");
-        showTodoList();
-        editTodoList(3, "Bekerja");
-        removeTodoList(3);
-        System.out.println("AFTER DELETE");
-        showTodoList();
+       showMainMenu();
     }
 
 
