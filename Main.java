@@ -5,7 +5,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("BEFORE DELETEE");
+        System.out.println("BEFORE DELETE");
         addTodoList("Mewarnai");
         addTodoList("Membaca");
         addTodoList("Bersepeda");
@@ -93,6 +93,64 @@ public class Main {
         }
         todos[number - 1] = newTodo;
         return true;
+    }
+
+    public static String input(String info){
+        System.out.println(info + " : ");
+        String data = scanner.nextLine();
+        return data;
+    }
+
+    public static void showMainMenu() {
+        boolean isRuning = true;
+        while (isRuning) {
+            showTodoList();
+            System.out.println("Menu : ");
+            System.out.println("1. Tambah");
+            System.out.println("2. Hapus");
+            System.out.println("3. Edit");
+            System.out.println("4. Keluar");
+            String selectedMenu = input("Pilih");
+            switch (selectedMenu) {
+                case "1":
+                    showMenuTodoList() ;
+                    break;
+                case "2":
+                    showMenuRemoveTodoList();
+                    break;
+                case "3":
+                    showMenuEditTodoList();
+                    break;
+                case "4":
+                    isRuning = false;
+                    break;
+            }
+        }
+
+    }
+
+    public static void showMenuRemoveTodoList() {
+        System.out.println("MENGHAPUS TODO LIST");
+        String number = input("Nomor yang dihapus (x jika batak)");
+        if (number.equals("x")) {
+            //batal
+        }else{
+            boolean success = removeTodoList(Integer.parseInt(number));
+            if (! success) {
+                System.out.println("Gagal menghapus todo list: " + number);
+            }
+        }
+
+    }
+
+    public static void showMenuTodoList() {
+        System.out.println("MENAMBAH TODO LIST");
+        String todo = input("Todo (x jika batal)");
+        if(todo.equals("x")) {
+            //batal
+        }else{
+            addTodoList(todo);
+        }
     }
 
 }
