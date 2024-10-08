@@ -153,5 +153,26 @@ public class Main {
         }
     }
 
+    public static void showMenuEditTodoList() {
+        System.out.println("MENGEDIT TODO LIST");
+        String selectedTodo = input("Nomor todo yang akan dihapus (x jika batal)");
+        if (selectedTodo.equals("x")) {
+            return;
+        }
+        String newTodo = input("MASUKAN TODO YANG BARU");
+        if (selectedTodo.equals("x")) {
+            return;
+        }
+        boolean isEditTodoSuccess = editTodoList(Integer.parseInt(selectedTodo), newTodo);
+        if (isEditTodoSuccess) {
+            System.out.println("Berhasil mengedit todo");
+        }else{
+            System.out.println("Gagal mengedit todo");
+        }
+
+
+
+    }
+
 }
 
